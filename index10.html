@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Basic Information Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color:pink;
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid orange;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: red;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        button[type="submit"] {
+            background-color: green;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Basic Information</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile No:</label>
+                <input type="number" id="mobile" name="mobile" pattern="[0-9]{10}" title="Please enter a 10-digit mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Education Done:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="matric" name="education" value="matric">
+                    <label for="matric">Matriculation</label><br>
+                    <input type="checkbox" id="intermediate" name="education" value="intermediate">
+                    <label for="intermediate">Intermediate</label><br>
+                    <input type="checkbox" id="graduate" name="education" value="graduate">
+                    <label for="graduate">Graduate</label><br>
+                    <input type="checkbox" id="postgraduate" name="education" value="postgraduate">
+                    <label for="postgraduate">Post-Graduate</label><br>
+                    <input type="checkbox" id="other_edu" name="education" value="other">
+                    <label for="other_edu">Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tea">Do you like tea?</label>
+                <select id="tea" name="tea">
+                    <option value="">-- Select --</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="sometimes">Sometimes</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
