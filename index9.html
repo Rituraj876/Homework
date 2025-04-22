@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Webpage Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: orange;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: pink;
+    }
+
+    .box {
+      text-align: center;
+      width: 150px;
+      padding: 20px;
+      background-color: red;
+      border-radius: 10px;
+      
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+    }
+
+    .box img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .box h2 {
+      font-size: 18px;
+      color: aqua;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">
+      <img src="Home" alt="Home">
+      <h2>Home </h2>
+	  <img src="home1.jpg" alt="Home">
+    </div>
+    <div class="box">
+      <img src="about.png" alt="About">
+      <h2>About</h2>
+    </div>
+    <div class="box">
+      <img src="picture.png" alt="Gallery">
+      <h2>Gallery</h2>
+    </div>
+    <div class="box">
+      <img src="phone.png" alt="Contact">
+      <h2>Contact</h2>
+    </div>
+  </div>
+
+</body>
+</html>
