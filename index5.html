@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Wonders of the World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: red;
+        }
+
+        nav {
+            background-color: aqua(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: orange;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: pink;
+        }
+
+        .container {
+            padding: 30px;
+            background-color: blue(0, 0, 0, 0.6);
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('ancient')">Ancient Wonders</a>
+        <a onclick="showPage('modern')">Modern Wonders</a>
+    </nav>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h1>Welcome to Wonders of the World</h1>
+            <p>Explore the most breathtaking creations of humanity, from the marvels of ancient civilizations to the engineering feats of the modern world.</p>
+            <img src="Pyramids.jpg" alt="Pyramids">
+        </div>
+
+        <!-- Ancient Wonders Page -->
+        <div id="ancient" class="page">
+            <h1>Ancient Wonders of the World</h1>
+            <p>The Seven Wonders of the Ancient World are iconic symbols of engineering, architecture, and creativity. Among the most famous is the Great Pyramid of Giza.</p>
+            <img src="Colosseum.jpg" alt="Colosseum">
+            
+        </div>
+
+        <!-- Modern Wonders Page -->
+        <div id="modern" class="page">
+            <h1>Modern Wonders of the World</h1>
+            <p>New wonders, such as the Taj Mahal and the Great Wall of China, reflect the ongoing creativity and passion of humankind through time.</p>
+            <img src="tajmahal" alt="Taj Mahal">
+        </div>
+    </div>
+
+    <script>
+        function showPage(id) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
