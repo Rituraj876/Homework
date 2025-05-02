@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print Name and Address</title>
+</head>
+<body>
+
+  <script>
+    const name = "Ritu Raj";
+    const address = "muzaffarpur";
+
+    document.write("Name: " + name);
+    document.write("Address: " + address);
+	
+	 const a = "100";
+    const b = 100;
+
+    if (a === b) {
+      document.write("Same value and same data type.");
+    } else {
+      document.write("Either value or data type (or both) are different.");
+    } 
+	
+	const str1 = "hello";
+    const str2 = "world";
+
+    const result = (str1 + str2).toUpperCase();
+
+    document.write("Combined in CAPS:", result); // Output: HELLOWORLD
+	
+	function getByteLength(str) {
+      return new TextEncoder().encode(str).length;
+    }
+
+    const input = "Hello 🌍"; // includes emoji
+    document.write(`Byte length of "${input}":`, getByteLength(input));
+	
+	function roundTo(num, digits) {
+      const factor = Math.pow(10, digits);
+      return Math.round(num * factor) / factor;
+    }
+
+    document.write(roundTo(3.1415926, 2)); // Output: 3.14
+    document.write(roundTo(123.456789, 4)); // Output: 123.4568
+	
+        
+ 
+  </script>
+
+</body>
+</html> 
