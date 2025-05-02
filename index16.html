@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Combined Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: pink;
+      color: orange ;
+    }
+    form, section {
+      background: red;
+      padding: 1rem;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Basic Info Form -->
+  <section>
+    <h2>1. Basic Information Form</h2>
+    <form id="infoForm">
+      <label>Name: <input type="text" id="name" required></label><br><br>
+      <label>Email: <input type="email" id="email" required></label><br><br>
+      <label>Age: <input type="number" id="age" required></label><br><br>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="formOutput"></div>
+  </section>
+
+  <!-- 2. Image Change on Button Click -->
+  <section>
+    <h2>2. Image Changer</h2>
+    <img id="changeableImage" src="changeableImage.jpg" alt="Sample Image">
+    <br>
+    <button onclick="changeImage()">Change Image</button>
+  </section>
+
+  <!-- 3. Font Size Control -->
+  <section>
+    <h2>3. Font Size Controller</h2>
+    <p id="resizableText">This is a resizable paragraph. Click the buttons to change font size.</p>
+    <button onclick="adjustFontSize(1)">Increase Font</button>
+    <button onclick="adjustFontSize(-1)">Decrease Font</button>
+  </section>
+
+  <!-- 4. Date and Time -->
+  <section>
+    <h2>4. Current Date & Time</h2>
+    <div id="dateTime"></div>
+  </section>
+
+  <script>
+    // 1. Form Submission and Display
+    document.getElementById('infoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const age = document.getElementById('age').value;
+
+      const output = `
+        <h3>Submitted Information:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Age:</strong> ${age}</p>
+      `;
+      document.getElementById('formOutput').innerHTML = output;
+    });
+
+    // 2. Image Change Function
+    function changeImage() {
+      const img = document.getElementById('changeableImage');
+      img.src = "changeableImage.jpg";
+    }
+
+    // 3. Font Size Adjustment
+    let fontSize = 16;
+    function adjustFontSize(change) {
+      fontSize += change;
+      if (fontSize < 10) fontSize = 10;
+      document.getElementById('resizableText').style.fontSize = fontSize + 'px';
+    }
+
+    // 4. Display Current Date & Time
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('dateTime').textContent = now.toLocaleString();
+    }
+    setInterval(updateTime, 1000); // Update every second
+    updateTime(); // Initial call
+  </script>
+
+</body>
+</html>
